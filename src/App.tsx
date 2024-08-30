@@ -1,33 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+
 import './App.css'
+import Checking from './components/Checking'
+import Classes from './components/Classes'
+import Functions from './components/Functions'
+import Generics from './components/Generics'
+import Parent from './components/Parent'
+import ParentComponent from './components/ParentComponent'
+import Props from './components/Props'
+import Greet from './components/Props'
+// import Index from './components/Index'
+import SignUpForm from './components/Signup'
+import UtilityTypes from './components/UtilityTypes'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* <Index/> */}
+      {/* <SignUpForm/> */}
+      {/* <Greet name={"nikhil"} age={22}/> */}
+      {/* <Checking/> */}
+      {/* <Functions/> */}
+      {/* <Classes/> */}
+      {/* <Generics/> */}
+      {/* <UtilityTypes/> */}
+      {/* <Props name={"nikhil"} age={22}/> */}
+      {/* <ParentComponent/> */}
+      <Parent/>
     </>
   )
 }
