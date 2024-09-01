@@ -1,0 +1,132 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    height: 80px;
+}
+#logo{
+    margin-left: -400px;
+    width: 12%;
+}
+.navbar-ul{
+    display: flex;
+    list-style: none;
+    margin-left: 313px;
+    margin-right: -420px;
+}
+.navbar-li{
+    text-decoration: none;
+    color: rgb(70, 70, 125);
+    margin-left: 25px;
+    font-size: larger;
+    cursor: pointer;
+}
+.navbar-li-dropdown{
+    list-style: none;
+    text-decoration: none;
+    color: rgb(70, 70, 125);
+    margin-left: -10px;
+}
+.navbar-li-dropdown-select{
+    list-style: none;
+    text-decoration: none;
+    color: rgb(70, 70, 125);
+    margin-left: -142px;
+}
+.navbar-li-dropdown-select:hover{
+    color: rgb(9, 201, 201);
+}
+.navbar-li:hover{
+    color: rgb(9, 201, 201);
+}
+.navbar-li.active{
+    text-decoration: none;
+    color: rgb(9, 201, 201);
+    margin-left: 25px;
+}
+
+
+
+
+
+.home-main{
+    display: flex;
+    margin-top: 40px;
+}
+.home-left{
+    margin: auto;
+    margin-left: 80px;
+}
+.home-button{
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(95, 95, 254);
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+}
+.home-button:hover{
+    color: black;
+    background-color: rgb(9, 201, 201);
+}
+
+
+
+.about-main{
+    display: flex;
+    margin-top: 70px;
+}
+.about-left{
+    margin: auto;
+    margin-left: 80px;
+}
+.about-left p{
+    width: 70%;
+}
+.about-img{
+    margin-right: 40px;
+}
+
+
+
+.careers-main{
+    display: flex;
+    margin-top: 30px;
+}
+.careers-left{
+    margin: auto;
+    margin-left: 160px;
+}
+.careers-right{
+    margin-right: 35px;
+}
+
+
+.contact-main{
+    display: flex;
+    margin-top: 20px;
+}
+.contact-left{
+    margin: auto;
+    margin-left: 110px;
+}
+.contact-right{
+    margin-right: 30px;
+}
+
+.digitalexp-main{
+    display: flex;
+    margin-top: 10px;
+}
+.digitalexp-left{
+    margin: auto;
+    margin-left: 80px;
+}
+
+
+.notfound{
+    text-align: center;
+    margin-top: 12%;
+}
