@@ -16,10 +16,10 @@ function App() {
       {/* <Counter/> */}
       {/* <Effect/> */}
       {/* <Fetch/> */}
-      {/* <Parent/> */}
+      <Parent/>
       {/* <ParentComponent/> */}
       {/* <NstParent/> */}
-      <Par/>
+      {/* <Par/> */}
     </>
   )
 }
