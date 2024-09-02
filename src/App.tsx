@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <ProductDetails id={1}/>
+      <ProductDetails id={2}/>
     </>
   )
 }
