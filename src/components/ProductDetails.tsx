@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 
+
 interface ProductProps{
     id:number;
 }
@@ -10,6 +11,8 @@ interface ProductProps{
 const ProductDetails:React.FC<ProductProps>=({id})=>{
 
     const [data,setData] = useState<any>();
+
+    
 
     async function fetchAPI() {
         const res=await fetch(`https://dummyjson.com/products/${id}`).then(res=>res.json())
