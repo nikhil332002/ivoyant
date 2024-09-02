@@ -1,6 +1,5 @@
 import React from "react";
 
-
 interface user{
     name:string;
     age:number;
@@ -10,7 +9,7 @@ interface user{
 interface GrandUser{
     users:user;
 }
-
+        
 const GrandChild:React.FC<GrandUser>=({users})=>{
     return(
         <div>

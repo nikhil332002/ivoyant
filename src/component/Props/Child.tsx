@@ -11,8 +11,6 @@ interface ChildProps {
   user: User;
 }
 
-
-
 const ChildComponent: React.FC<ChildProps> = ({ user }) => {
 
 // const Address={

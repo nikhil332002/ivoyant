@@ -1,5 +1,6 @@
 
 import './App.css'
+import ArrayParent from './component/ArrayProps/ArrayParent'
 import { Counter } from './component/Counter'
 import { Effect } from './component/Effect'
 import { Fetch } from './component/Fetch'
@@ -16,10 +17,11 @@ function App() {
       {/* <Counter/> */}
       {/* <Effect/> */}
       {/* <Fetch/> */}
-      <Parent/>
+      {/* <Parent/> */}
       {/* <ParentComponent/> */}
       {/* <NstParent/> */}
       {/* <Par/> */}
+      <ArrayParent/>
     </>
   )
 }
