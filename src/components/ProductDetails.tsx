@@ -35,8 +35,6 @@ const ProductDetails:React.FC<ProductProps>=({id})=>{
     console.log(data);
 
 
-    
-
     return(
         <div>
             <img src={data?.thumbnail} alt="" />
