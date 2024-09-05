@@ -1,0 +1,44 @@
+{
+  "students": [
+    {
+      "studentName": "studentName 1",
+      "studentEmail": "studentEmail 1",
+      "id": "1"
+    },
+    {
+      "studentName": "studentName 2",
+      "studentEmail": "studentEmail 2",
+      "id": "2"
+    },
+    {
+      "studentName": "studentName 3",
+      "studentEmail": "studentEmail 3",
+      "id": "3"
+    },
+    {
+      "studentName": "studentName 4",
+      "studentEmail": "studentEmail 4",
+      "id": "4"
+    },
+    {
+      "studentName": "Amrutha",
+      "studentEmail": "amrutha@gmail.com",
+      "id": "5"
+    },
+    {
+      "studentName": "Nikhil",
+      "studentEmail": "niki@gmail.com",
+      "id": "7"
+    },
+    {
+      "studentName": "Manjunath",
+      "studentEmail": "manju@gmail.com",
+      "id": "8"
+    },
+    {
+      "id": "271b",
+      "studentName": "newmember",
+      "studentEmail": "newmember@gmail.com"
+    }
+  ]
+}
