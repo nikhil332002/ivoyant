@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "4c74",
+      "firstname": "nikhil",
+      "lastname": "r",
+      "email": "niki@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "c97e",
+      "firstname": "manju",
+      "lastname": "s",
+      "email": "manju@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "adcf",
+      "firstname": "abc",
+      "lastname": "d",
+      "company": "company",
+      "email": "abc@gmail.com",
+      "password": "123"
+    }
+  ]
+}
