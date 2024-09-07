@@ -21,6 +21,14 @@
       "company": "company",
       "email": "abc@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "8bf0",
+      "firstname": "first",
+      "lastname": "last",
+      "company": "company",
+      "email": "first@gmail.com",
+      "password": "123"
     }
   ]
 }

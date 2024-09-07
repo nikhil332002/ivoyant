@@ -4,6 +4,7 @@ import Login from './SignUP/Login'
 import './SignUP/Signup.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from './SignUP/Dashboard'
+import FormComponent from './SignUP/Dummy'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
     </BrowserRouter>
+    
       
        
     </>
