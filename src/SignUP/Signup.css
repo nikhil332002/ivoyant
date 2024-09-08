@@ -1,4 +1,6 @@
-
+*{
+    margin: 0;
+}
 .main-div{
     background-color: rgb(250, 250, 251);
 }
@@ -21,6 +23,9 @@
     font-family: Arial, sans-serif;
     background-color: rgb(250, 250, 251);
     padding: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    
 }
 
 .logo svg {

@@ -85,7 +85,7 @@ const Login: React.FC = () => {
 </div>
 
       <div className='form-main'>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex',marginTop:'30px',marginBottom:'30px' }}>
                      <div style={{ marginLeft: '28px', fontFamily: '"Public Sans", sans-serif' }}>
                          <h2>Login</h2>
                      </div>
