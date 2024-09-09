@@ -51,9 +51,9 @@ const Income_overview_chart=()=>{
           <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
           <YAxis />
           <Tooltip />
-          <Legend />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="pv" fill="rgba(92, 219, 211, 0.85)"  />
+          {/* <Legend /> */}
+          <CartesianGrid strokeDasharray="0 1" />
+          <Bar dataKey="pv" fill="rgba(92, 219, 211, 0.85)"  radius={5}/>
         </BarChart>
       </ResponsiveContainer>
     );

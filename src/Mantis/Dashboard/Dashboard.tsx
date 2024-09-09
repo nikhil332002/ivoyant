@@ -17,13 +17,15 @@ import {
   BarcodeOutlined,
   ChromeOutlined,
   QuestionOutlined,
+  AntDesignOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Col, Divider, Dropdown, Flex, Input, Layout, Menu, MenuProps, Row, Space, theme, } from 'antd';
+import { Avatar, Button, Col, Divider, Dropdown, Flex, Input, Layout, Menu, MenuProps, Row, Space, theme, Tooltip, } from 'antd';
 import Unique_visitors_chart from '../charts/Unique_visitor_chart';
 import Income_overview_chart from '../charts/Income_overview_chart';
 import { Table } from "antd";
 import {dataSource} from '../Data_json/table.json'
 import Analytics_report_chart from '../charts/Analytics_report_chart';
+import Sales_report_chart from '../charts/Sales_report_chart';
 
 
 const { Header, Sider, Content } = Layout;
@@ -284,15 +286,89 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
         
-        <div style={{ display: 'flex', width: '100%', height:'36%'}}>
+        <div style={{ display: 'flex', width: '100%', height:'31%'}}>
           <div style={{ width: '80%', height: '10%', marginTop: '30px', }}>
             <h3 style={{ marginBottom: '20px',marginLeft:'20px' }}>Recent Orders</h3>
-            <Table dataSource={dataSource} columns={columns} size='middle' style={{border:'1px solid black'}}/>
+            <Table dataSource={dataSource} columns={columns} size='middle' style={{border:'1px solid rgb(230, 235, 241)',borderRadius:'8px',}} pagination={false}/>
           </div>
-          <div style={{ width: '45%', height: '75%', marginTop: '30px' }}>
+          <div style={{ width: '45%', height: '60%', marginTop: '30px' }}>
             <h3 style={{ marginBottom: '20px',marginLeft:'20px' }}>Analytics Report</h3>
+            <Flex vertical style={{marginLeft:'20px',}}>
+            <Button>company Finance Growth <span/> 123</Button>
+            <Button>company Expenses Ratio <span/> 123</Button>
+            <Button>Business Risk Cases <span/> 123</Button>
+            </Flex>
             <Analytics_report_chart/>
           </div>
+        </div>
+
+        <div style={{ display: 'flex', width: '100%',height:'22%' }}>
+            <div style={{ width: '80%', height: '95%', marginTop: '30px' }}>
+              <h3 style={{ marginBottom: '20px' }}>Unique Visitors</h3>
+              <Sales_report_chart/>
+            </div>
+            <div style={{ width: '45%', height: '95%', marginTop: '30px' }}>
+              <h3 style={{ marginBottom: '20px',marginLeft:'20px' }}>Transaction History</h3>
+              <Flex vertical style={{border:'1px solid rgb(230, 235, 241)',borderRadius:'8px',backgroundColor:'white',marginLeft:'20px'}}>
+                <Row style={{marginLeft:'18px',paddingTop:'14px'}}>
+                  <span style={{marginRight:'10px'}}>
+                    <GiftOutlined style={{ fontSize: '16px', color: 'rgb(82, 196, 26)', borderRadius: '50%', padding: '7px', backgroundColor: 'rgb(246, 255, 237)' }} />
+                  </span>
+                  <span style={{marginRight:'80px'}}>
+                    <p>Order #002434</p>
+                    <p>Today, 2:00 AM</p>
+                  </span>
+                  <span>
+                    <p>+ $1,430</p>
+                    <p>78%</p>
+                  </span>
+                </Row>
+                <Divider/>
+                <Row style={{marginLeft:'18px'}}>
+                  <span style={{marginRight:'10px'}}>
+                  <MessageOutlined style={{ fontSize: '16px', color: 'rgb(22, 119, 255)', borderRadius: '50%', padding: '7px', backgroundColor: 'rgb(230, 244, 255' }} />
+                  </span>
+                  <span style={{marginRight:'63px'}}>
+                    <p>Order #984947</p>
+                    <p>5 August, 1:45 PM</p>
+                  </span>
+                  <span>
+                    <p>+ $302</p>
+                    <p>8%</p>
+                  </span>
+                </Row>
+                <Divider/>
+                <Row style={{marginLeft:'18px'}}>
+                  <span style={{marginRight:'10px'}}>
+                  <SettingOutlined style={{ fontSize: '16px', color: 'rgb(255, 77, 79)', borderRadius: '50%', padding: '7px', backgroundColor: 'rgb(255, 241, 240)' }} />
+                  </span>
+                  <span style={{marginRight:'82px',paddingBottom:'14px'}}>
+                    <p>Order #988784</p>
+                    <p>7 hours ago</p>
+                  </span>
+                  <span>
+                    <p>+ $682</p>
+                    <p>16%</p>
+                  </span>
+                </Row>
+              </Flex>
+
+              <div style={{ border: '1px solid rgb(230, 235, 241)', borderRadius: '8px', backgroundColor: 'white', marginLeft: '20px', marginTop: '10px', padding: '15px' }}>
+                <h3>Help & Support Chat</h3>
+                <p>Typical replay within 5 min</p>
+                <Avatar.Group style={{marginBottom:'10px'}}>
+                  <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
+                  <a href="https://ant.design">
+                    <Avatar style={{ backgroundColor: '#f56a00' }}>K</Avatar>
+                  </a>
+                  <Tooltip title="Ant User" placement="top">
+                    <Avatar style={{ backgroundColor: '#87d068' }} icon={<UserOutlined />} />
+                  </Tooltip>
+                  <Avatar style={{ backgroundColor: '#1677ff' }} icon={<AntDesignOutlined />} />
+                </Avatar.Group>
+                <Button type='primary' block>Need Help?</Button>
+              </div>
+            </div>
         </div>
           
         </Content>
