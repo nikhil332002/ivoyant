@@ -1,12 +1,11 @@
 
 import React from 'react';
-import './Signup.css'
 import { Button, Form, Input, notification } from 'antd';
-import { User, useSignupUserMutation } from './api';
+import { User, useSignupUserMutation } from '../Slice/api';
 import { Link, useNavigate } from 'react-router-dom';
 
 // placeholder width
-const formItemLayout = {
+const formItemLayout = {                                                                                          
   labelCol: {
     xs: { span: 24 },
     sm: { span: 15 },

@@ -1,10 +1,10 @@
 
-import SignUp from './SignUP/SignUp'
-import Login from './SignUP/Login'
-import './SignUP/Signup.css'
+import SignUp from './Mantis/Signup/SignUp'
+import Login from './Mantis/Login/Login'
+import './Mantis/css/Signup.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Dashboard from './SignUP/Dashboard'
-import FormComponent from './SignUP/Dummy'
+import Dashboard from './Mantis/Dashboard/Dashboard'
+
 
 
 function App() {
@@ -12,7 +12,6 @@ function App() {
 
   return (
     <>
-    {/* <SignUp/> */}
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<SignUp/>}/>

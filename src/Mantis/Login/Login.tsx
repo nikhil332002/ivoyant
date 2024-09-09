@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button, Checkbox, Flex, Form, Input, notification } from 'antd';
 import logo from '../assets/logo.jpg';
-import { useLazyLoginUserQuery } from './api';
+import { useLazyLoginUserQuery } from '../Slice/api';
 import { Link, useNavigate } from 'react-router-dom';
 
 const formItemLayout = {
