@@ -79,7 +79,7 @@ const Dashboard: React.FC = () => {
   ];
 
 
-  // table
+  // table contents
   const columns = [
     {
       title: 'TRACKING NO.',
@@ -119,6 +119,7 @@ const Dashboard: React.FC = () => {
 
       }} >
 
+      {/* logo */}
         <div className="mantis-container-dash">
           <div className="logo-dash">
             <svg className='logo-svg-dash' xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" fill="#0066FF">
@@ -134,7 +135,7 @@ const Dashboard: React.FC = () => {
           mode="inline"
           defaultSelectedKeys={['1']}
 
-
+          // side bar items
           items={[
             {
               label: 'Navigation',
@@ -199,9 +200,6 @@ const Dashboard: React.FC = () => {
 
         {/* top navbar */}
         <Header style={{ padding: 0, background: colorBgContainer, position: 'sticky', top: 0, borderBottom: '1px solid rgb(240, 240, 240)',zIndex:'10' }}>
-
-
-
           <Button
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -251,6 +249,7 @@ const Dashboard: React.FC = () => {
             backgroundColor: 'rgb(250, 250, 251)',
           }}
         >
+          {/* dashbord boxes */}
           <h3>Dashboard</h3>
           <Row justify="space-between">
             <Col span={5} className="four-box">
@@ -275,6 +274,7 @@ const Dashboard: React.FC = () => {
             </Col>
           </Row>
 
+          {/* unique chart and income overview chart */}
           <div style={{ display: 'flex', width: '100%',height:'36%' }}>
             <div style={{ width: '80%', height: '95%', marginTop: '30px' }}>
               <h3 style={{ marginBottom: '20px' }}>Unique Visitors</h3>
@@ -286,6 +286,7 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
         
+        {/* tabel and Analytics_report_chart */}
         <div style={{ display: 'flex', width: '100%', height:'31%'}}>
           <div style={{ width: '80%', height: '10%', marginTop: '30px', }}>
             <h3 style={{ marginBottom: '20px',marginLeft:'20px' }}>Recent Orders</h3>
@@ -302,6 +303,7 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
 
+          {/* sales report chart */}
         <div style={{ display: 'flex', width: '100%',height:'22%' }}>
             <div style={{ width: '80%', height: '95%', marginTop: '30px' }}>
               <h3 style={{ marginBottom: '20px' }}>Unique Visitors</h3>
@@ -369,11 +371,8 @@ const Dashboard: React.FC = () => {
                 <Button type='primary' block>Need Help?</Button>
               </div>
             </div>
-        </div>
-          
+        </div>          
         </Content>
-    
-
       </Layout>
     </Layout >
   );
