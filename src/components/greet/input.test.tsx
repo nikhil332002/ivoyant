@@ -6,6 +6,6 @@ import Input from "./input"
 
 test('check input',()=>{
     render(<Input/>)
-    const textElement = screen.getByRole("button")
+    const textElement = screen.getByDisplayValue('6')
     expect(textElement).toBeInTheDocument()
 })

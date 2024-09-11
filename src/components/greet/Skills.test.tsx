@@ -15,4 +15,4 @@ describe('map',()=>{
         const textElement = screen.getAllByRole("listitem")
         expect(textElement).toHaveLength(skill.length)
     })
-})
+}) 
