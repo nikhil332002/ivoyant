@@ -1,4 +1,4 @@
-import { render,screen } from "@testing-library/react"
+import { logRoles, render,screen } from "@testing-library/react"
 import Skills from "./Skills"
 
 describe('map',()=>{
@@ -10,7 +10,8 @@ describe('map',()=>{
     })
 
     test('renders list items',()=>{
-        render(<Skills skill={skill}/>)
+        const view = render(<Skills skill={skill}/>)
+        logRoles(view.container)
         const textElement = screen.getAllByRole("listitem")
         expect(textElement).toHaveLength(skill.length)
     })
