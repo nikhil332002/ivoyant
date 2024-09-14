@@ -1,0 +1,15 @@
+@import 'Sample';
+@mixin mixin{
+    font-size: large;
+    font-weight: bolder;
+}
+
+.sample{
+    @include mixin;
+    color: $mycolor;
+    background-color: $backcolor;
+}
+.sample2{
+    @extend .sample;
+    font-style: italic;
+}
