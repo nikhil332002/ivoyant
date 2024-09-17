@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Students } from "../models/students.models";
 
 
-export const studentApi = createApi({
+export const studentApi = createApi({ 
     baseQuery:fetchBaseQuery({
         baseUrl: 'http://localhost:3000'        //db.json
     }),

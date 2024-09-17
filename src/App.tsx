@@ -12,8 +12,9 @@ import UsersList from './QueryMethods/UsersList';
 import AddProductForm from './RtkQuery/AddProductForm';
 import Read from './CRUD/components/Read';
 import AddStudents from './CRUD/components/AddStudents';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './CRUD/components/Navbar';
+import Display from './practise-rtkq/Display';
 
 
 function App() {
@@ -28,15 +29,16 @@ function App() {
       {/* <AddUserForm/>
       <UsersList/> */}
     
-    <BrowserRouter>
+    {/* <BrowserRouter>
     <Navbar/>
         <Routes>
           <Route path='/' element={<Read/>}/>
           <Route path='/addStudents' element={<AddStudents/>}/>
           <Route path='/editStudents/:id' element={<AddStudents/>}/>
         </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
     
+    <Display/>
    
     
     </>
