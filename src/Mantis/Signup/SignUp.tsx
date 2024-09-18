@@ -38,21 +38,22 @@ const SignUp: React.FC = () => {
 
   const onFinish = async (values: User) => {
     try {
-      await signupUser({
+      const signupuser = await signupUser({
         firstname: values.firstname,
         lastname: values.lastname,
         company: values.company,
         email: values.email,
         password: values.password,
-      });
+      }).unwrap();
 
-      notification.success({
-        message: 'Signup Successful',
-        description: 'Your account has been created!',
-      });
-      navigate('/login');
-      form.resetFields();
-
+      if(signupuser){
+        notification.success({
+          message: 'Signup Successful',
+          description: 'Your account has been created!',
+        });
+        navigate('/login');
+        form.resetFields();
+      }
 
     } catch (error) {
       notification.error({
