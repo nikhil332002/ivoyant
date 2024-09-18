@@ -6,7 +6,6 @@ const initialState: CommentsState = {
   comments: [],
 };
 
-// Helper function to find a comment by ID recursively
 const findCommentById = (comments: Comment[], id: number): Comment | undefined => {
   for (const comment of comments) {
     if (comment.id === id) return comment;
