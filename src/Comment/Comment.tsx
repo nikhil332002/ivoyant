@@ -57,7 +57,7 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
               onChange={(e) => setReplyText(e.target.value)}
               placeholder="Reply to this comment"
             />
-            <button onClick={handleReply}>Reply</button>
+            <button onClick={handleReply}>Send</button>
           </div>
         )
       }

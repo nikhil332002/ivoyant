@@ -10,10 +10,10 @@ function App() {
 
   return (
     <>
-      <Counter/>
+      {/* <Counter/> */}
       {/* <Todo/> */}
-      {/* <CommentForm/>
-      <CommentList/> */}
+      <CommentForm/>
+      <CommentList/>
     </>
   )
 }
