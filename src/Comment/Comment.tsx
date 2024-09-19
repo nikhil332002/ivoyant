@@ -1,4 +1,4 @@
-// src/features/comments/Comment.tsx
+
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editComment, deleteComment, replyToComment } from './CommentsSlice';

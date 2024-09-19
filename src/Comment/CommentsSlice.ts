@@ -1,4 +1,4 @@
-// src/features/comments/commentsSlice.ts
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Comment, CommentsState } from './Types';
 
