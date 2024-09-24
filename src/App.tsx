@@ -5,6 +5,13 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const handle =()=>{
+    localStorage.setItem('token', "dggdgdgdgdgfdfdc");
+    console.log(localStorage.getItem('token'));
+    sessionStorage.setItem('token', "dggdgdgdgd");
+    console.log(sessionStorage.getItem('token'));
+
+  }
 
   return (
     <>
@@ -28,6 +35,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <button onClick={handle}>Set data</button>
     </>
   )
 }
