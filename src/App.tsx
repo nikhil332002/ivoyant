@@ -35,9 +35,9 @@ function App() {
       {/* <Parent/> */}
       {/* <Counter/> */}
       {/* <Form/> */}
-      {/* <Form/> */}
+      <Form/>
       {/* <Parent/> */}
-      <Counter />
+      {/* <Counter /> */}
     </>
   );
 }
