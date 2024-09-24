@@ -51,7 +51,7 @@ const WeatherPage: React.FC = () => {
                     <Title level={3} style={{ color: '#ffffff', textAlign: 'center' }}>{data.name}</Title>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px'}}>
                         <Flex gap="small">
-                        <Card style={{ backgroundColor: '#3a3a3a', color: '#ffffff'}}>
+                        <Card  style={{ backgroundColor: '#3a3a3a', color: '#ffffff'}}>
                             <Paragraph style={{ color: '#ffffff' }}>Temperature: {data.main.temp} °C</Paragraph>
                         </Card>
                         <Card style={{ backgroundColor: '#3a3a3a', color: '#ffffff' }}>
