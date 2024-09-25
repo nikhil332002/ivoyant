@@ -16,6 +16,7 @@ const WeatherPage: React.FC = () => {
     const handleFetchWeather = () => {
         setFinal(district);
     };
+console.log(data);
 
     return (
         <div style={{ maxWidth: 600, backgroundColor: '#1a1a1a', color: '#ffffff', padding: '20px', borderRadius: '8px' }}>
