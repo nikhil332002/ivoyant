@@ -8,12 +8,20 @@ import Contact from './Route/Contact'
 import Career from './Route/Career'
 import DigitalExperience from './Route/DigitalExperience'
 import NoPage from './Route/NoPage'
+import HomePage from './dynamic/HomePage'
+import PostPage from './dynamic/PostPage'
+import Dashboard from './nested/Dashboard'
+import { Overview, Settings, Profile } from './nested/Pages'
+import { DashboardProtected, HomePageProtected, LoginPage } from './protected/Pages'
+import ProtectedRoute from './protected/ProtectedRoute'
 
 function App() {
 
 
   return (
     <>
+    {/* static */}
+    {/* <div>
     <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -23,6 +31,44 @@ function App() {
         <Route path='/digital-experience' element={<DigitalExperience/>}/>
         <Route path='*' element={<NoPage/>}/>
       </Routes>
+      </div> */}
+
+      {/* dynamic */}
+      {/* <div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/post/:id" element={<PostPage />} />
+      </Routes>
+      </div> */}
+
+      {/* nested */}
+      {/* <div>
+      <Routes>
+        <Route path="dashboard" element={<Dashboard />}>
+          <Route path="overview" element={<Overview />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
+      </Routes>
+      </div> */}
+
+      {/* protected */}
+      <div>
+      <Routes>
+        <Route path="/" element={<HomePageProtected />} />
+        <Route path="/login" element={<LoginPage />} />
+        
+        {/* Protected Route */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <DashboardProtected />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+      </div>
     </>
   )
 }
