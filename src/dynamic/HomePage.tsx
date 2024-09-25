@@ -6,10 +6,10 @@ const HomePage: React.FC = () => {
         <div >
             <h1 style={{textAlign:'center'}}>Home Page</h1>
         <Flex gap="small" justify='center'>
-        <Card title="Post 1" bordered={true} style={{ width: 200, borderColor:'black',textAlign:'center' }}>
+        <Card title="Post 1" bordered={true} style={{ width: 200, borderColor:'black',textAlign:'center' }} headStyle={{ borderBottomColor: 'black' }}>
             <Link to="/post/1">Post 1</Link>
         </Card>
-        <Card title="Post 2" bordered={true} style={{ width: 200, borderColor:'black',textAlign:'center' }}>
+        <Card title="Post 2" bordered={true} style={{ width: 200, borderColor:'black',textAlign:'center' }} headStyle={{ borderBottomColor: 'black' }}>
             <Link to="/post/2">Post 2</Link>
         </Card>
         </Flex>

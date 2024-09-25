@@ -12,8 +12,7 @@ import HomePage from './dynamic/HomePage'
 import PostPage from './dynamic/PostPage'
 import Dashboard from './nested/Dashboard'
 import { Overview, Settings, Profile } from './nested/Pages'
-import { DashboardProtected, HomePageProtected, LoginPage } from './protected/Pages'
-import ProtectedRoute from './protected/ProtectedRoute'
+import { DashboardProtected, HomePageProtected, LoginPage, ProtectedRoute } from './protected/Pages'
 
 function App() {
 
@@ -57,8 +56,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePageProtected />} />
         <Route path="/login" element={<LoginPage />} />
-        
-        {/* Protected Route */}
         <Route
           path="/dashboard"
           element={
