@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const Dashboard: React.FC = () => {
     return (
-      <div>
+      <div style={{textAlign:"center"}}>
         <h1>Dashboard</h1>
         <nav>
           <Link to="overview">Overview</Link> |{" "}
