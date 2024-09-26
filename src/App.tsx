@@ -20,7 +20,7 @@ function App() {
   return (
     <>
     {/* static */}
-    <div>
+    {/* <div>
     <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -30,7 +30,7 @@ function App() {
         <Route path='/digital-experience' element={<DigitalExperience/>}/>
         <Route path='*' element={<NoPage/>}/>
       </Routes>
-      </div>
+      </div> */}
 
       {/* dynamic */}
       {/* <div>
@@ -52,20 +52,20 @@ function App() {
       </div> */}
 
       {/* protected */}
-      {/* <div>
+      <div>
       <Routes>
         <Route path="/" element={<HomePageProtected />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute> 
               <DashboardProtected />
             </ProtectedRoute>
           }
         />
       </Routes>
-      </div> */}
+      </div>
     </>
   )
 }
