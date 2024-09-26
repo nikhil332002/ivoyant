@@ -1,6 +1,7 @@
 
 import './App.css'
-import Parent from './practise/Parent'
+import Parent from './props/Parent'
+
 import Fetch from './useEffect/Fetch'
 
 function App() {
