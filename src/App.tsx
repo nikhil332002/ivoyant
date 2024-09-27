@@ -1,8 +1,12 @@
 
 import './App.css'
-import Parent from './props/Parent'
+
+
+
+import Parent from './practise/Parent'
 
 import Fetch from './useEffect/Fetch'
+
 
 function App() {
 
@@ -10,6 +14,7 @@ function App() {
   return (
     <>
       {/* <Fetch/> */}
+      {/* <Parent/> */}
       <Parent/>
     </>
   )
