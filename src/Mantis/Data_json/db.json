@@ -37,6 +37,14 @@
       "company": "company",
       "email": "new@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "4cb1",
+      "firstname": "name",
+      "lastname": "last",
+      "company": "ivoyant",
+      "email": "name@gmail.com",
+      "password": "123456"
     }
   ]
 }
