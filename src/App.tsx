@@ -4,6 +4,8 @@ import './App.css'
 
 
 import Parent from './practise/Parent'
+import Test from './ref/Test'
+import Time from './ref/Time'
 
 import Fetch from './useEffect/Fetch'
 
@@ -15,7 +17,9 @@ function App() {
     <>
       {/* <Fetch/> */}
       {/* <Parent/> */}
-      <Parent/>
+      {/* <Parent/> */}
+      {/* <Test/> */}
+      <Time/>
     </>
   )
 }
