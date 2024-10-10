@@ -1,7 +1,7 @@
-// src/Weather.tsx
 import React, { useState } from 'react';
 import { useGetWeatherQuery } from '../slice/WeatherApi';
 import { Card, Input, Button, Typography, Spin, Alert, Flex } from 'antd';
+import '../styles/Style.css'
 
 const { Title, Paragraph } = Typography;
 
@@ -15,56 +15,56 @@ const WeatherPage: React.FC = () => {
 
     const handleFetchWeather = () => {
         setFinal(district);
+        setDistrict("");
     };
 console.log(data);
 
     return (
-        <div style={{ maxWidth: 600, backgroundColor: '#1a1a1a', color: '#ffffff', padding: '20px', borderRadius: '8px' }}>
-            <Title level={2} style={{ textAlign: 'center', color: '#ffffff' }}>
+        <div className='main-div'>
+            <Title level={2} className='title' >
                 Weather App
             </Title>
             <Input
                 placeholder="Enter district name"
                 value={district}
                 onChange={(e) => setDistrict(e.target.value)}
-                style={{ marginBottom: 10, borderColor: '#444444', backgroundColor: 'white', color: 'black' }}
-                
+                className='input-box' 
             />
             <Button 
                 type="primary" 
                 onClick={handleFetchWeather} 
                 block 
-                style={{ backgroundColor: '#007bff', borderColor: '#007bff', marginBottom: 20 }}
+                className='button'
             >
                 Check Weather
             </Button>
 
             {isLoading && (
-                <div style={{ textAlign: 'center', marginTop: 20 }}>
+                <div className='spinner'>
                     <Spin size="large" />
                 </div>
             )}
             {error && (
-                <Alert message="District not found" type="error" showIcon style={{ marginTop: 20 }} />
+                <Alert message="District not found" type="error" showIcon className='error' />
             )}
             {data && (
-                <Card style={{ marginTop: 20, backgroundColor: '#2a2a2a', color: '#ffffff', borderRadius: '8px' }}>
-                    <Title level={3} style={{ color: '#ffffff', textAlign: 'center' }}>{data.name}</Title>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px'}}>
+                <Card className='main-card'>
+                    <Title level={3} className='card-title'>{data.name}</Title>
+                    <div className='card-div'>
                         <Flex gap="small">
-                        <Card  style={{ backgroundColor: '#3a3a3a', color: '#ffffff'}}>
-                            <Paragraph style={{ color: '#ffffff' }}>Temperature: {data.main.temp} °C</Paragraph>
+                        <Card className='temp-card'>
+                            <Paragraph className='cards-titles'>Temperature: {data.main.temp} °C</Paragraph>
                         </Card>
-                        <Card style={{ backgroundColor: '#3a3a3a', color: '#ffffff' }}>
-                            <Paragraph style={{ color: '#ffffff' }}>Description: {data.weather[0].description}</Paragraph>
+                        <Card className='desc-card'>
+                            <Paragraph className='cards-titles'>Description: {data.weather[0].description}</Paragraph>
                         </Card>
                         </Flex>
                         <Flex gap="small">
-                        <Card style={{ backgroundColor: '#3a3a3a', color: '#ffffff',width:'53%' }}>
-                            <Paragraph style={{ color: '#ffffff' }}>Humidity: {data.main.humidity}%</Paragraph>
+                        <Card className='humi-card'>
+                            <Paragraph className='cards-titles'>Humidity: {data.main.humidity}%</Paragraph>
                         </Card>
-                        <Card style={{ backgroundColor: '#3a3a3a', color: '#ffffff',width:'55%' }}>
-                            <Paragraph style={{ color: '#ffffff' }}>Wind Speed: {data.wind.speed} m/s</Paragraph>
+                        <Card className='wind-card'>
+                            <Paragraph className='cards-titles'>Wind Speed: {data.wind.speed} m/s</Paragraph>
                         </Card>
                         </Flex>
                     </div>

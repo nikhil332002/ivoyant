@@ -1,0 +1,58 @@
+.main-div{
+    width: 500px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+.title{
+    text-align: center;
+    color: white !important
+}
+.input-box{
+    margin-bottom: 10px;
+    border-color: #444444;
+    background-color: white;
+    color: black;
+}
+.button{
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-bottom: 20px;
+} 
+.spinner{
+    text-align: center;
+    margin-top: 20px ;
+}
+.error{
+    margin-top: 20px;
+}
+.main-card{
+    margin-top: 20px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-radius: 8px;
+}
+.card-title{
+    color: #ffffff !important;
+    text-align: center;
+}
+.card-div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.temp-card, .humi-card, .wind-card,.desc-card {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    width: 250px !important; 
+    overflow: hidden !important; 
+    text-overflow: ellipsis !important; 
+    white-space: nowrap !important; 
+}
+
+.cards-titles{
+    color: white !important;
+    text-overflow: ellipsis !important; 
+    white-space: nowrap !important; 
+}
