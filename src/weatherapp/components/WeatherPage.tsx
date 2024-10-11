@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { useGetWeatherQuery } from '../slice/WeatherApi';
 import { Card, Input, Button, Typography, Spin, Alert, Flex } from 'antd';
 import '../styles/Style.css'
 
 const { Title, Paragraph } = Typography;
 
+
+
 const WeatherPage: React.FC = () => {
     const [district, setDistrict] = useState<string>('');
     const [final, setFinal] = useState<string>('');
+    const [suggestions, setSuggestions] = useState([]);
+
+    const apiKey = import.meta.env.VITE_API_KEY;
 
     const { data, error, isLoading } = useGetWeatherQuery(final, {
         skip: !final,
@@ -17,7 +22,30 @@ const WeatherPage: React.FC = () => {
         setFinal(district);
         setDistrict("");
     };
-console.log(data);
+
+    const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
+        setDistrict(e.target.value);
+        fetchCities(e.target.value);
+    }
+
+
+    const fetchCities = async (input:string) => {
+        if (input.length > 2) {
+          const response = await fetch(
+            `http://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=5&appid=${apiKey}`
+          );
+          const data = await response.json();
+          setSuggestions(data.map((city:any) => `${city.name}`));
+        } else {
+          setSuggestions([]); 
+        }
+      };
+
+    const handleSuggestionClick = (city:string) => {
+    setDistrict(city); 
+    setSuggestions([]);  
+    };
+// console.log(data);
 
     return (
         <div className='main-div'>
@@ -25,11 +53,20 @@ console.log(data);
                 Weather App
             </Title>
             <Input
-                placeholder="Enter district name"
+                placeholder="Enter city name"
                 value={district}
-                onChange={(e) => setDistrict(e.target.value)}
+                onChange={handleChange}
                 className='input-box' 
             />
+            {suggestions.length > 0 && (
+                <ul className="suggestions-list">
+                    {suggestions.map((city, index) => (
+                        <div key={index} onClick={() => handleSuggestionClick(city)}>
+                            {city}
+                        </div>
+                    ))}
+                </ul>
+            )}
             <Button 
                 type="primary" 
                 onClick={handleFetchWeather} 
@@ -45,7 +82,7 @@ console.log(data);
                 </div>
             )}
             {error && (
-                <Alert message="District not found" type="error" showIcon className='error' />
+                <Alert message="City not found" type="error" showIcon className='error' />
             )}
             {data && (
                 <Card className='main-card'>
