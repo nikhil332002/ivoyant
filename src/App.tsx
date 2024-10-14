@@ -1,5 +1,6 @@
 
 import './App.css'
+import Child from './practise/Child'
 
 
 
@@ -17,9 +18,9 @@ function App() {
     <>
       {/* <Fetch/> */}
       {/* <Parent/> */}
-      {/* <Parent/> */}
+      <Parent/>
       {/* <Test/> */}
-      <Time/>
+      {/* <Time/> */}
     </>
   )
 }

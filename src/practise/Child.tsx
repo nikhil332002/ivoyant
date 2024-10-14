@@ -1,12 +1,15 @@
 import { memo } from "react";
 
-const Child=()=>{
+interface props{
+    display: ()=>void;
+}
+const Child:React.FC<props>=({display})=>{
 
-
+    display()
+    
     return(
         <div>
-
         </div>
     )
 }
-export default Child;
+export default memo(Child);
