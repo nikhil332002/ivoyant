@@ -15,6 +15,9 @@
     background-color: white;
     color: black;
 }
+.suggestion{
+    cursor: pointer;
+}
 .button{
     background-color: #007bff;
     border-color: #007bff;

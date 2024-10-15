@@ -68,7 +68,7 @@ const WeatherPage: React.FC = () => {
             {suggestions.length > 0 && (
                 <ul className="suggestions-list">
                     {suggestions.map((city, index) => (
-                        <div key={index} onClick={() => handleSuggestionClick(city)}>
+                        <div className='suggestion' key={index} onClick={() => handleSuggestionClick(city)}>
                             {city}
                         </div>
                     ))}
