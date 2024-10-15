@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useGetWeatherQuery } from '../slice/WeatherApi';
 import { Input, Button, Typography, Spin, Alert } from 'antd';
 import '../styles/Style.css'
@@ -26,12 +26,10 @@ const WeatherPage: React.FC = () => {
 
     const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
         setDistrict(e.target.value);
-        fetchCities(e.target.value);
     }
-
-
+    
     const fetchCities = async (input:string) => {
-        if (input.length > 2) {
+        if (input) {
           const response = await fetch(
             `http://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=5&appid=${apiKey}`
           );
@@ -41,6 +39,14 @@ const WeatherPage: React.FC = () => {
           setSuggestions([]); 
         }
       };
+
+    useEffect(()=>{
+        const id = setTimeout(() => {
+            fetchCities(district);
+        }, 500);
+
+        return ()=>{clearTimeout(id)}
+    },[district])
 
     const handleSuggestionClick = (city:string) => {
     setDistrict(city); 
