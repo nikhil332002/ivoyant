@@ -14,6 +14,7 @@ const WeatherPage: React.FC = () => {
     const [suggestions, setSuggestions] = useState([]);
 
     const apiKey = import.meta.env.VITE_API_KEY;
+    const suggestion_base_url = import.meta.env.VITE_SUGGESTION_BASE_URL;
 
     const { data, error, isLoading } = useGetWeatherQuery(final, {
         skip: !final,
@@ -31,7 +32,7 @@ const WeatherPage: React.FC = () => {
     const fetchCities = async (input:string) => {
         if (input) {
           const response = await fetch(
-            `http://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=5&appid=${apiKey}`
+            suggestion_base_url+`q=${input}&limit=5&appid=${apiKey}`
           );
           const data = await response.json();
           setSuggestions(data.map((city:any) => `${city.name}`));
