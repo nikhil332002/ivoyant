@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
 import { Button, Checkbox, Flex, Form, Input, notification } from 'antd';
-import logo from '../assets/logo.jpg';
 import { useLazyLoginUserQuery } from '../Slice/api';
 import { Link, useNavigate } from 'react-router-dom';
+import '../css/Login.css'
+import Logo from '../Dashboard/Logo';
 
 const formItemLayout = {
     labelCol: {
@@ -73,26 +74,17 @@ const Login: React.FC = () => {
 
   return (
     <div className='main-div'>
-      <div className="mantis-container">
-    <div className="logo">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" fill="#0066FF">
-            <path d="M480 776 240 536l240-240 240 240-240 240Zm0 280L0 576l480-480 480 480-480 480Z"/>
-        </svg>
-    </div>
-    <h1 className="mantis-name">Mantis</h1>
-    <span className="version-badge">v1.3.0</span>
-</div>
+      <Logo/>
 
       <div className='form-main'>
-      <div style={{ display: 'flex',marginTop:'30px',marginBottom:'30px' }}>
-                     <div style={{ marginLeft: '28px', fontFamily: '"Public Sans", sans-serif' }}>
-                         <h2>Login</h2>
-                     </div>
-                     <div style={{ margin: 'auto', marginRight: '32px', }}>
-                         <Link style={{color:'blue',textDecoration:'none'}} to="/">Don't have an account?</Link>
-                     </div>
-                 </div>
+      <div className='login-inner-div' >
+          <div className='login-name' >
+              <h2>Login</h2>
+          </div>
+          <div className='login-account' >
+              <Link className='login-account-name'  to="/">Don't have an account?</Link>
+          </div>
+      </div>
         <Form
           {...formItemLayout}
           form={form}
@@ -127,7 +119,7 @@ const Login: React.FC = () => {
                      </Form.Item>
 
           <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit" loading={loading} block style={{ marginLeft: '-145px', width: '135%' }}>
+          <Button className='login-button' type="primary" htmlType="submit" loading={loading} block >
             Login
           </Button>
           </Form.Item>

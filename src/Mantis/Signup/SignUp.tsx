@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Form, Input, notification } from 'antd';
 import { User, useSignupUserMutation } from '../Slice/api';
 import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../Dashboard/Logo';
 
 // placeholder width
 const formItemLayout = {                                                                                          
@@ -68,24 +69,16 @@ const SignUp: React.FC = () => {
     <div className='main-div'>
 
     {/* logo div */}
-      <div className="mantis-container">
-        <div className="logo">
-          <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" fill="#0066FF">
-            <path d="M480 776 240 536l240-240 240 240-240 240Zm0 280L0 576l480-480 480 480-480 480Z" />
-          </svg>
-        </div>
-        <h1 className="mantis-name">Mantis</h1>
-        <span className="version-badge">v1.3.0</span>
-      </div>
+      <Logo/>
 
       {/* form div */}
       <div className='form-main'>
-        <div style={{ display: 'flex', marginTop: '30px', marginBottom: '30px' }}>
-          <div style={{ marginLeft: '28px', fontFamily: '"Public Sans", sans-serif' }}>
+        <div className='signup-inner-div' >
+          <div className='signup-name' >
             <h2>Sign up</h2>
           </div>
-          <div style={{ margin: 'auto', marginRight: '32px' }}>
-            <Link style={{ color: 'blue', textDecoration: 'none' }} to="/login">Already have an account?</Link>
+          <div className='accont-div'>
+            <Link className='account'  to="/login">Already have an account?</Link>
           </div>
         </div>
         <Form

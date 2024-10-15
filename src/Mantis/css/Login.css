@@ -1,0 +1,21 @@
+.login-inner-div{
+    display: flex;
+    margin-top:30px;
+    margin-bottom: 30px;
+}
+.login-name{
+    margin-left: 28px;
+    font-family: Public Sans, sans-serif;
+}
+.login-account{
+    margin: auto;
+    margin-right: 32px;
+}
+.login-account-name{
+    color:blue;
+    text-decoration:none;
+}
+.login-button{
+    margin-left: -145px;
+    width: 135% !important;
+}

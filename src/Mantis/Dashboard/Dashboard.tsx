@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../css/Dashboard.css'
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -34,7 +35,7 @@ const Dashboard: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   const {
-    token: { colorBgContainer, },
+    token: {colorBgContainer},
   } = theme.useToken();
 
   // notification items
@@ -195,42 +196,35 @@ const Dashboard: React.FC = () => {
             },
           ]}
         />
-      </Sider>
+      </Sider> 
       <Layout>
 
         {/* top navbar */}
-        <Header style={{ padding: 0, background: colorBgContainer, position: 'sticky', top: 0, borderBottom: '1px solid rgb(240, 240, 240)',zIndex:'10' }}>
+        <Header className='dashboard' style={{background:colorBgContainer}}>
           <Button
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: '16px',
-              width: 38,
-              height: 38,
-              marginLeft: '10px',
-              marginRight: '10px',
-              backgroundColor: 'rgb(245, 245, 245)',
-            }}
+            className='collapse-button'
           />
 
           {/* search bar */}
-          <Space.Compact size="large" style={{ width: '22%' }}>
+          <Space.Compact size="large" className='searchbar'>
             <Input addonBefore={<SearchOutlined
             />} placeholder="Ctrl + K" />
           </Space.Compact>
 
           {/* github-notification-user */}
-          <span style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', padding: '10px', marginTop: '-70px' }}>
+          <span className='github-notification-user' >
             <a href='https://github.com/codedthemes/mantis-free-react-admin-template' target='_blank'>
               <Space>
-                <GithubFilled style={{ color: 'black', fontSize: '17px', padding: '9px', backgroundColor: 'rgb(245, 245, 245)', borderRadius: '5px', marginRight: '6px' }} />
+                <GithubFilled className='github-icon' />
               </Space>
             </a>
             <Dropdown menu={{ items }} trigger={['click']} placement='bottomRight'>
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
-                  <BellOutlined style={{ color: 'black', fontSize: '17px', padding: '9px', backgroundColor: 'rgb(245, 245, 245)', borderRadius: '5px', marginRight: '8px' }} />
+                  <BellOutlined className='bell-icon' />
                 </Space>
               </a>
             </Dropdown>
@@ -275,25 +269,25 @@ const Dashboard: React.FC = () => {
           </Row>
 
           {/* unique chart and income overview chart */}
-          <div style={{ display: 'flex', width: '100%',height:'36%' }}>
-            <div style={{ width: '80%', height: '95%', marginTop: '30px' }}>
-              <h3 style={{ marginBottom: '20px' }}>Unique Visitors</h3>
+          <div className='unique-income-chart' >
+            <div className='unique-chart' >
+              <h3 className='unique-chart-name' >Unique Visitors</h3>
               <Unique_visitors_chart />
             </div>
-            <div style={{ width: '45%', height: '95%', marginTop: '30px' }}>
-              <h3 style={{ marginBottom: '20px',marginLeft:'20px' }}>Income Overview</h3>
+            <div className='income-chart' >
+              <h3 className='income-chart-name' >Income Overview</h3>
               <Income_overview_chart />
             </div>
           </div>
         
         {/* tabel and Analytics_report_chart */}
-        <div style={{ display: 'flex', width: '100%', height:'31%'}}>
-          <div style={{ width: '80%', height: '10%', marginTop: '30px', }}>
-            <h3 style={{ marginBottom: '20px',marginLeft:'20px' }}>Recent Orders</h3>
-            <Table dataSource={dataSource} columns={columns} size='middle' style={{border:'1px solid rgb(230, 235, 241)',borderRadius:'8px',}} pagination={false}/>
+        <div className='tabel-analytics-chart' >
+          <div className='table-div' >
+            <h3 className='recent-order' >Recent Orders</h3>
+            <Table className='table-tag' dataSource={dataSource} columns={columns} size='middle' pagination={false}/>
           </div>
-          <div style={{ width: '45%', height: '60%', marginTop: '30px' }}>
-            <h3 style={{ marginBottom: '20px',marginLeft:'20px' }}>Analytics Report</h3>
+          <div className='analytics-chart' >
+            <h3 className='analytics-name' >Analytics Report</h3>
             <Flex vertical style={{marginLeft:'20px',}}>
             <Button>company Finance Growth <span/> 123</Button>
             <Button>company Expenses Ratio <span/> 123</Button>
@@ -304,17 +298,17 @@ const Dashboard: React.FC = () => {
         </div>
 
           {/* sales report chart */}
-        <div style={{ display: 'flex', width: '100%',height:'22%' }}>
-            <div style={{ width: '80%', height: '95%', marginTop: '30px' }}>
-              <h3 style={{ marginBottom: '20px' }}>Unique Visitors</h3>
+        <div className='last-section' >
+            <div className='sales-chart' >
+              <h3 className='unique-visitors'>Unique Visitors</h3>
               <Sales_report_chart/>
             </div>
-            <div style={{ width: '45%', height: '95%', marginTop: '30px' }}>
-              <h3 style={{ marginBottom: '20px',marginLeft:'20px' }}>Transaction History</h3>
-              <Flex vertical style={{border:'1px solid rgb(230, 235, 241)',borderRadius:'8px',backgroundColor:'white',marginLeft:'20px'}}>
+            <div className='transaction-div' >
+              <h3 className='transaction-name' >Transaction History</h3>
+              <Flex className='transaction-help-div' vertical >
                 <Row style={{marginLeft:'18px',paddingTop:'14px'}}>
                   <span style={{marginRight:'10px'}}>
-                    <GiftOutlined style={{ fontSize: '16px', color: 'rgb(82, 196, 26)', borderRadius: '50%', padding: '7px', backgroundColor: 'rgb(246, 255, 237)' }} />
+                    <GiftOutlined className='gift-icon'/>
                   </span>
                   <span style={{marginRight:'80px'}}>
                     <p>Order #002434</p>
@@ -328,7 +322,7 @@ const Dashboard: React.FC = () => {
                 <Divider/>
                 <Row style={{marginLeft:'18px'}}>
                   <span style={{marginRight:'10px'}}>
-                  <MessageOutlined style={{ fontSize: '16px', color: 'rgb(22, 119, 255)', borderRadius: '50%', padding: '7px', backgroundColor: 'rgb(230, 244, 255' }} />
+                  <MessageOutlined className='msg-icon' />
                   </span>
                   <span style={{marginRight:'63px'}}>
                     <p>Order #984947</p>
@@ -342,7 +336,7 @@ const Dashboard: React.FC = () => {
                 <Divider/>
                 <Row style={{marginLeft:'18px'}}>
                   <span style={{marginRight:'10px'}}>
-                  <SettingOutlined style={{ fontSize: '16px', color: 'rgb(255, 77, 79)', borderRadius: '50%', padding: '7px', backgroundColor: 'rgb(255, 241, 240)' }} />
+                  <SettingOutlined className='setting-icon' />
                   </span>
                   <span style={{marginRight:'82px',paddingBottom:'14px'}}>
                     <p>Order #988784</p>
