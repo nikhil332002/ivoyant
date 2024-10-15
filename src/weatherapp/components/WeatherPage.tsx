@@ -1,9 +1,10 @@
 import React, { ChangeEvent, useState } from 'react';
 import { useGetWeatherQuery } from '../slice/WeatherApi';
-import { Card, Input, Button, Typography, Spin, Alert, Flex } from 'antd';
+import { Input, Button, Typography, Spin, Alert } from 'antd';
 import '../styles/Style.css'
+import Data_cards from './Data_cards';
 
-const { Title, Paragraph } = Typography;
+const { Title} = Typography;
 
 
 
@@ -85,27 +86,7 @@ const WeatherPage: React.FC = () => {
                 <Alert message="City not found" type="error" showIcon className='error' />
             )}
             {data && (
-                <Card className='main-card'>
-                    <Title level={3} className='card-title'>{data.name}</Title>
-                    <div className='card-div'>
-                        <Flex gap="small">
-                        <Card className='temp-card'>
-                            <Paragraph className='cards-titles'>Temperature: {data.main.temp} °C</Paragraph>
-                        </Card>
-                        <Card className='desc-card'>
-                            <Paragraph className='cards-titles'>Description: {data.weather[0].description}</Paragraph>
-                        </Card>
-                        </Flex>
-                        <Flex gap="small">
-                        <Card className='humi-card'>
-                            <Paragraph className='cards-titles'>Humidity: {data.main.humidity}%</Paragraph>
-                        </Card>
-                        <Card className='wind-card'>
-                            <Paragraph className='cards-titles'>Wind Speed: {data.wind.speed} m/s</Paragraph>
-                        </Card>
-                        </Flex>
-                    </div>
-                </Card>
+                <Data_cards name={data.name} temp={data.main.temp} desc={data.weather[0].description} humi={data.main.humidity} wind={data.wind.speed} />
             )}
         </div>
     );
