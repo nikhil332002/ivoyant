@@ -349,7 +349,7 @@ const Dashboard: React.FC = () => {
                 </Row>
               </Flex>
 
-              <div style={{ border: '1px solid rgb(230, 235, 241)', borderRadius: '8px', backgroundColor: 'white', marginLeft: '20px', marginTop: '10px', padding: '15px' }}>
+              <div className='help-support' >
                 <h3>Help & Support Chat</h3>
                 <p>Typical replay within 5 min</p>
                 <Avatar.Group style={{marginBottom:'10px'}}>
