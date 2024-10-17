@@ -247,7 +247,6 @@ const Dashboard: React.FC = () => {
             </Dropdown>
             <Button >
               <Avatar size="small" icon={<UserOutlined />} />
-              User
             </Button>
           </span>
         </Header>
