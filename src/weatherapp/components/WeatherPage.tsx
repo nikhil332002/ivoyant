@@ -20,6 +20,7 @@ const WeatherPage: React.FC = () => {
         skip: !final,
     });
 
+    
     const handleFetchWeather = () => {
         setFinal(district);
         setDistrict("");
