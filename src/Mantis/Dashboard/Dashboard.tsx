@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import '../css/Dashboard.css'
 import {
   MenuFoldOutlined,
@@ -33,10 +33,27 @@ const { Header, Sider, Content } = Layout;
 
 const Dashboard: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [filteredTable,setFilteredTable] = useState(dataSource);
 
   const {
     token: {colorBgContainer},
   } = theme.useToken();
+
+  const handleFilter=(e:ChangeEvent<HTMLSelectElement>)=>{
+    const {value} = e.target;
+    if(value === 'dec'){
+      const filtered = [...dataSource].sort((a,b)=>{
+        return b.amount.localeCompare(a.amount);
+      })
+      setFilteredTable(filtered);
+    }
+    else{
+      const filtered = [...dataSource].sort((a,b)=>{
+        return a.amount.localeCompare(b.amount);
+      })
+      setFilteredTable(filtered);
+    }
+  }
 
   // notification items
   const items: MenuProps['items'] = [
@@ -284,7 +301,12 @@ const Dashboard: React.FC = () => {
         <div className='tabel-analytics-chart' >
           <div className='table-div' >
             <h3 className='recent-order' >Recent Orders</h3>
-            <Table className='table-tag' dataSource={dataSource} columns={columns} size='middle' pagination={false}/>
+            <label htmlFor="amount">Amount</label>
+            <select name='amount' onChange={handleFilter}>
+              <option value="inc">Increasing</option>
+              <option value="dec">Decreasing</option>
+            </select>
+            <Table className='table-tag' dataSource={filteredTable} columns={columns} size='middle' pagination={false}/>
           </div>
           <div className='analytics-chart' >
             <h3 className='analytics-name' >Analytics Report</h3>

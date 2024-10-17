@@ -6,7 +6,7 @@
             "name":"Keyboard",
             "order":"125",
             "status":"Rejected",
-            "amount":"$71,999"
+            "amount":"$71999"
         },
         {
             "key":"2",  		 
@@ -14,7 +14,7 @@
             "name":"Computer Accessories",
             "order":"100",
             "status":"Approved",
-            "amount":"$83,348"
+            "amount":"$83348"
         },
         {
             "key":"3",  			
@@ -22,7 +22,7 @@
             "name":"Camera Lens",
             "order":"40",
             "status":"Rejected",
-            "amount":"$40,570"
+            "amount":"$40570"
         },
         {
             "key":"4",  			    
@@ -30,7 +30,7 @@
             "name":"TV",
             "order":"99",
             "status":"Pending",
-            "amount":"$410,780"
+            "amount":"$41078"
         },
         {
             "key":"5",  			 
@@ -38,7 +38,7 @@
             "name":"Handset",
             "order":"50",
             "status":"Approved",
-            "amount":"$10,239"
+            "amount":"$10239"
         },
         {
             "key":"6",  			          
@@ -46,7 +46,7 @@
             "name":"Mouse",
             "order":"89",
             "status":"Rejected",
-            "amount":"$10,570"
+            "amount":"$10570"
         },
         {
             "key":"7",  			    
@@ -54,7 +54,7 @@
             "name":"Desktop",
             "order":"185",
             "status":"Approved",
-            "amount":"$98,063"
+            "amount":"$98063"
         },
         {
             "key":"8",  			   
@@ -62,7 +62,7 @@
             "name":"Chair",
             "order":"100",
             "status":"Pending",
-            "amount":"$14,001"
+            "amount":"$14001"
         },
         {
             "key":"9",			
@@ -70,7 +70,7 @@
             "name":"Mobile",
             "order":"355",
             "status":"Approved",
-            "amount":"$90,989"
+            "amount":"$90989"
         },
         {
             "key":"10",			 
@@ -78,7 +78,7 @@
             "name":"Laptop",
             "order":"300",
             "status":"Pending",
-            "amount":"$180,139"
+            "amount":"$18013"
         }
 
     ]
