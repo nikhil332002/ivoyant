@@ -9,7 +9,7 @@ const UesFetch=(url:string)=>{
         const res=await fetch(url).then(res=>res.json())
         setProductDetails(res.products);
     }
-
+    console.log("hi");
     useEffect(()=>{
         useFetch()
     },[url])
