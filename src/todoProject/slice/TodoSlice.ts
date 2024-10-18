@@ -6,7 +6,7 @@ interface Todo {
   title: string;
   description: string;
   completed: boolean;
-  reminderDate: Date | null; // Updated to handle specific date and time
+  reminderDate: Date | null; 
 }
 
 interface TodosState {
@@ -35,7 +35,7 @@ const todosSlice = createSlice({
       notification.success({ message: 'Todo added!', description: 'Your task has been added.' });
     },
     removeTodo: (state, action: PayloadAction<string>) => {
-      state.list = state.list.filter(todo => todo.id !== action.payload);
+      state.pending = state.pending.filter(todo => todo.id !== action.payload);
     },
     markAsCompleted: (state, action: PayloadAction<string>) => {
       const todo = state.list.find(todo => todo.id === action.payload);
@@ -57,7 +57,6 @@ const todosSlice = createSlice({
       const todo = state.list.find(todo => todo.id === action.payload.id);
       if (todo && todo.reminderDate) {
         todo.reminderDate = new Date(todo.reminderDate.getTime() + action.payload.incrementMillis);
-        notification.info({ message: 'Reminder time updated!', description: 'The reminder time has been incremented.' });
       }
     },
   },

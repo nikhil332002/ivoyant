@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
 import { addTodo, removeTodo, markAsCompleted, moveToPending, incrementReminderTime } from '../slice/TodoSlice';
-import { Button, Input, List, notification, Typography, Form, DatePicker } from 'antd';
+import { Button, Input, List, notification, Typography, Form, DatePicker, Flex, Row } from 'antd';
 import 'antd/dist/reset.css';
 import dayjs from 'dayjs';
 
@@ -17,7 +17,7 @@ const Page1: React.FC = () => {
   const [description, setDescription] = useState<string>('');
   const [reminderDate, setReminderDate] = useState<Date | null>(null);
 
-  console.log((reminderDate));
+  // console.log((reminderDate));
   
 
   const handleAddTodo = () => {
@@ -33,21 +33,26 @@ const Page1: React.FC = () => {
     dispatch(markAsCompleted(id));
   };
 
+  const handleRemovePending=(id:string)=>{
+    dispatch(removeTodo(id));
+  }
+
   const handleMoveToPending = (id: string) => {
     dispatch(moveToPending(id));
   };
 
-  const handleIncrementReminder = (id: string) => {
+  const handleIncrementReminder = (id: string,title:string) => {
     dispatch(incrementReminderTime({ id, incrementMillis: 3600000 })); // Increment by 1 hour
     notification.info({
       message: 'Reminder Time Updated',
-      description: `Reminder time for task with ID ${id} has been incremented by 1 hour.`,
+      description: `Reminder time for task ${title} has been incremented by 1 hour.`,
     });
   };
 
-  const onDateChange = (date: any, dateString: string) => {
+  const onDateChange = (date: any, dateString: string | string[]) => {
     if (date) {
-      setReminderDate(dayjs(dateString).toDate());
+      const validDateString = Array.isArray(dateString) ? dateString[0] : dateString;
+      setReminderDate(dayjs(validDateString).toDate());
     } else {
       setReminderDate(null);
     }
@@ -57,7 +62,7 @@ const Page1: React.FC = () => {
   useEffect(() => {
     const checkOverdueTasks = () => {
       const now = new Date();
-      console.log("now",now);
+      // console.log("now",now);
       
       todos.forEach(todo => {
         if (todo.reminderDate && !todo.completed && now >= new Date(todo.reminderDate)) {
@@ -67,7 +72,7 @@ const Page1: React.FC = () => {
             message: 'Task Overdue',
             description: `Task "${todo.title}" is overdue!`,
             onClick: () => {
-              // Optional: Redirect or handle the click event
+              handleMarkAsCompleted(todo.id);
             }
           });
         }
@@ -115,16 +120,20 @@ const Page1: React.FC = () => {
             actions={[
               <Button onClick={() => handleMarkAsCompleted(item.id)}>Complete</Button>,
               <Button onClick={() => handleMoveToPending(item.id)}>Move to Pending</Button>,
-              <Button onClick={() => handleIncrementReminder(item.id)}>Increase Reminder</Button>
+              <Button onClick={() => handleIncrementReminder(item.id,item.title)}>Increase Reminder</Button>
             ]}
           >
-            <List.Item.Meta
-              title={item.title}
-              description={item.description}
-            />
+            <Flex vertical>
+              <Row>
+              Title: {item.title}
+              </Row>
+              <Row>
+              Description: {item.description}
+              </Row>
             {item.reminderDate && (
               <div>Reminder: {item.reminderDate.toLocaleString()}</div>
             )}
+            </Flex>
           </List.Item>
         )}
       />
@@ -135,7 +144,8 @@ const Page1: React.FC = () => {
         renderItem={item => (
           <List.Item
             actions={[
-              <Button onClick={() => handleIncrementReminder(item.id)}>Increase Reminder</Button>
+              <Button onClick={() => handleIncrementReminder(item.id,item.title)}>Increase Reminder</Button>,
+              <Button onClick={() => handleRemovePending(item.id)}>Completed</Button>
             ]}
           >
             <List.Item.Meta
