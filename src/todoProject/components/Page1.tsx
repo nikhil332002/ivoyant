@@ -148,13 +148,17 @@ const Page1: React.FC = () => {
               <Button onClick={() => handleRemovePending(item.id)}>Completed</Button>
             ]}
           >
-            <List.Item.Meta
-              title={item.title}
-              description={item.description}
-            />
+            <Flex vertical>
+              <Row>
+              Title: {item.title}
+              </Row>
+              <Row>
+              Description: {item.description}
+              </Row>
             {item.reminderDate && (
               <div>Reminder: {item.reminderDate.toLocaleString()}</div>
             )}
+            </Flex>
           </List.Item>
         )}
       />
