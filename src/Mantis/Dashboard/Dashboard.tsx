@@ -20,13 +20,15 @@ import {
   QuestionOutlined,
   AntDesignOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Col, Divider, Dropdown, Flex, Input, Layout, Menu, MenuProps, Row, Space, theme, Tooltip, } from 'antd';
+import { Avatar, Button, Col, Divider, Dropdown, Flex, Input, Layout, Menu, Row, Space, theme, Tooltip, } from 'antd';
 import Unique_visitors_chart from '../charts/Unique_visitor_chart';
 import Income_overview_chart from '../charts/Income_overview_chart';
 import { Table } from "antd";
 import {dataSource} from '../Data_json/table.json'
 import Analytics_report_chart from '../charts/Analytics_report_chart';
 import Sales_report_chart from '../charts/Sales_report_chart';
+import { items } from './Notification_items';
+import { columns } from './Table_columns';
 
 
 const { Header, Sider, Content } = Layout;
@@ -55,76 +57,6 @@ const Dashboard: React.FC = () => {
     }
   }
 
-  // notification items
-  const items: MenuProps['items'] = [
-    {
-      label: <h4>Notification</h4>,
-      key: '0',
-    },
-    {
-      icon: <GiftOutlined style={{ fontSize: '16px', color: 'rgb(82, 196, 26)', borderRadius: '50%', padding: '7px', backgroundColor: 'rgb(246, 255, 237)' }} />,
-      label: <a >It's Cristina danny's birthday today. 3:00 AM<br /> 2 min ago</a>,
-      key: '1',
-    },
-    {
-      type: 'divider',
-    },
-    {
-      icon: <MessageOutlined style={{ fontSize: '16px', color: 'rgb(22, 119, 255)', borderRadius: '50%', padding: '7px', backgroundColor: 'rgb(230, 244, 255' }} />,
-      label: <a>Aida Burg commented your post. 6:00 PM<br /> 5 August</a>,
-      key: '2',
-    },
-    {
-      type: 'divider',
-    },
-    {
-      icon: <SettingOutlined style={{ fontSize: '16px', color: 'rgb(255, 77, 79)', borderRadius: '50%', padding: '7px', backgroundColor: 'rgb(255, 241, 240)' }} />,
-      label: <a >Your profile is complete 60%. 2:45 PM<br /> 7 hours ago</a>,
-      key: '3',
-    },
-    {
-      type: 'divider',
-    },
-    {
-      icon: <span style={{ fontSize: '16px', color: 'rgb(22, 119, 255)', borderRadius: '50%', padding: '7px', backgroundColor: 'rgb(230, 244, 255', }}>C</span>,
-      label: <a >Christina Danny invited to join Meeting. 9:10 PM<br /> Daily scrum meeting time</a>,
-      key: '4',
-    },
-    {
-      label: <h4 style={{ color: 'rgb(22, 119, 255', textAlign: 'center' }}>View All</h4>,
-      key: '5',
-    },
-  ];
-
-
-  // table contents
-  const columns = [
-    {
-      title: 'TRACKING NO.',
-      dataIndex: 'track',
-      key: 'track',
-    },
-    {
-      title: 'PRODUCT NAME',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'TOTAL ORDER',
-      dataIndex: 'order',
-      key: 'order',
-    },
-    {
-        title: 'STATUS',
-        dataIndex: 'status',
-        key: 'status',
-    },
-    {
-        title: 'TOTAL AMOUNT',
-        dataIndex: 'amount',
-        key: 'amount',
-    },
-  ];
 
   return (
     <Layout >
